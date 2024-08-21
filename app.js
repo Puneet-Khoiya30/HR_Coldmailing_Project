@@ -68,6 +68,7 @@ app.post('/upload', (req, res) => {
             });
 
             res.send({ message: 'Emails sent successfully.' });
+            break;
 
         } catch (error) {
             console.error('Error during file processing:', error);
