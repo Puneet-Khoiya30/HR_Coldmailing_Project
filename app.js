@@ -24,7 +24,7 @@ app.post('/upload', (req, res) => {
             console.error('File move error:', err);
             return res.status(500).send({ message: 'Error uploading file.' });
         }
-
+    for(let i = 1; i<=5; i++){
         try {
             const workbook = new ExcelJS.Workbook();
             await workbook.xlsx.readFile(filePath);
@@ -73,6 +73,7 @@ app.post('/upload', (req, res) => {
             console.error('Error during file processing:', error);
             res.status(500).send({ message: 'Error processing file.' });
         }
+    }    
     });
 });
 
